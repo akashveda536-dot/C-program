@@ -1,15 +1,12 @@
 #include<stdio.h>
 int main()
 {
-	int a,b,c;
-	printf("Enter any numbers:");
-	scanf("%d,%d,%d",&a,&b,&c);
-	
-	int sum = a+b+c;
-	float average = sum /3;
-
-        printf("sum =%d",sum);
-	printf("average =%.2f",average);
+	const float pi=3.14;
+	float Area,r;
+	printf("Enter the radius of the circle:");
+        scanf("%f",&r);
+	Area=2*pi*r;
+        printf("%.2f\n",Area);
 	return 0;
 }
 
