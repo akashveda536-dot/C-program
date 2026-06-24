@@ -1,16 +1,21 @@
-#include <stdio.h>
+#include<stdio.h>
+int factorial(int n)
+{
+	int i,fact=1;
+	for(i=1;i<=n;i++)
+	{
+		fact=fact*i;
+	}
 
+	return fact;
+}
 int main()
 {
-    int num = 56789;
-    int count = 0;
-
-    for(; num != 0; num = num / 10)
-    {
-        count++;
-    }
-
-    printf("Number of digits = %d", count);
-
-    return 0;
+	int num,result;
+	printf("Enter a number:");
+	scanf("%d",&num);
+	result = factorial(num);
+	printf("factorial of %d = %d\n",num,result);
+	return 0;
 }
+

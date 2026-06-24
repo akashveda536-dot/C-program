@@ -1,14 +1,12 @@
-#include<stdio.h>
-int main()
+#include <stdio.h>
+
+void greet()
 {
-	int num;
-	printf("Enter a number:");
-	scanf("%d",&num);
-	
-	if(num % 2 ==0)
-		printf("%d is Even\n",num);
-	else
-		printf("%d is odd\n",num);
-	return 0;
+    printf("Welcome to Embedded C\n");
 }
 
+int main()
+{
+    greet();
+    return 0;
+}

@@ -1,19 +1,22 @@
 #include <stdio.h>
 
+int sumofDigits(int n)
+{
+	int digit, sum = 0;
+	while(n > 0)
+    {
+	    digit = n % 10;
+	    sum = sum+digit;
+	    n = n / 10;
+    }
+    return sum;
+}
 int main()
 {
-    int arr[10] = {12, 45, 7, 89, 23, 56, 34, 90, 11, 67};
-    int largest = arr[0];
-
-    for(int i = 1; i < 10; i++)
-    {
-        if(arr[i] > largest)
-        {
-            largest = arr[i];
-        }
-    }
-
-    printf("Largest element = %d", largest);
-
+    int num, result;
+    printf("Enter a number:");
+    scanf("%d", &num);
+    result = sumofDigits(num);
+    printf("Sum of digits = %d\n",result);
     return 0;
 }

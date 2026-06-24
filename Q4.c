@@ -1,16 +1,24 @@
 #include <stdio.h>
 
+int isEven(int num)
+{
+    if (num % 2 == 0)
+        return 1;
+    else
+        return 0;
+}
+
 int main()
 {
-    int N;
+    int n;
 
-    printf("Enter the value of N: ");
-    scanf("%d", &N);
+    printf("Enter a number: ");
+    scanf("%d", &n);
 
-    for(int i = 1; i <= N; i++)
-    {
-        printf("%d\n", i);
-    }
+    if (isEven(n))
+        printf("Even Number\n");
+    else
+        printf("Odd Number\n");
 
     return 0;
 }

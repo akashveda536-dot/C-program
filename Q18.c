@@ -1,14 +1,36 @@
 #include <stdio.h>
 
-int len(char s[])
+int findSum(int arr[], int size)
 {
-    int i;
-    for(i = 0; s[i] != '\0'; i++);
-    return i;
+    int i, sum = 0;
+
+    for(i = 0; i < size; i++)
+    {
+        sum = sum + arr[i];
+    }
+
+    return sum;
 }
 
 int main()
 {
-    char s[] = "Hello";
-    printf("%d", len(s));
+    int arr[5];
+    int i, sum;
+    float average;
+
+    printf("Enter 5 elements:\n");
+
+    for(i = 0; i < 5; i++)
+    {
+        scanf("%d", &arr[i]);
+    }
+
+    sum = findSum(arr, 5);
+
+    average = (float)sum / 5;
+
+    printf("Sum = %d\n", sum);
+    printf("Average = %.2f\n", average);
+
+    return 0;
 }

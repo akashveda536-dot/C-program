@@ -1,21 +1,28 @@
 #include <stdio.h>
 
+void swap(int *a,int *b)
+{
+    int temp;
+
+    temp = *a;
+    *a = *b;
+    *b = temp;
+
+    printf("Inside swap function:\n");
+    printf("a = %d,b = %d\n",*a,*b);
+}
+
 int main()
 {
-    int num = 121;
-    int original = num;
-    int reverse = 0, rem;
+    int x = 10, y = 20;
 
-    for(; num != 0; num = num / 10)
-    {
-        rem = num % 10;
-        reverse = reverse * 10 + rem;
-    }
+    printf("Before swapping:\n");
+    printf("x = %d, y = %d\n", x,y);
 
-    if(original == reverse)
-        printf("Palindrome");
-    else
-        printf("Not Palindrome");
+    swap(&x,&y);
+
+    printf("After swap function call:\n");
+    printf("x = %d, y = %d\n", x,y);
 
     return 0;
 }

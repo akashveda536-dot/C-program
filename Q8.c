@@ -1,13 +1,17 @@
-#include <stdio.h>
-
+#include<stdio.h>
+void table(int n)
+{
+	int i;
+	for(i=1;i<=10;i++)
+	{
+		printf("%d*%d=%d\n",n,i,n*i);
+	}
+}
 int main()
 {
-    int num = 5;
-
-    for(int i = 1; i <= 10; i++)
-    {
-        printf("%d x %d = %d\n", num, i, num * i);
-    }
-
-    return 0;
+	int num;
+	printf("Enter a number:");
+	scanf("%d",&num);
+	table(num);
+	return 0;
 }

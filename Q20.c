@@ -1,29 +1,44 @@
 #include <stdio.h>
 
+void sortArray(int arr[], int size)
+{
+    int i, j, temp;
+
+    for(i = 0; i < size - 1; i++)
+    {
+        for(j = i + 1; j < size; j++)
+        {
+            if(arr[i] > arr[j])
+            {
+                temp = arr[i];
+                arr[i] = arr[j];
+                arr[j] = temp;
+            }
+        }
+    }
+}
+
 int main()
 {
-    char str[] = "Hello 123 World";
-    int v = 0, c = 0, d = 0, s = 0;
+    int arr[5];
+    int i;
 
-    for(int i = 0; str[i] != '\0'; i++)
+    printf("Enter 5 elements:\n");
+
+    for(i = 0; i < 5; i++)
     {
-        char ch = str[i];
-
-        if(ch=='a'||ch=='e'||ch=='i'||ch=='o'||ch=='u'||
-           ch=='A'||ch=='E'||ch=='I'||ch=='O'||ch=='U')
-            v++;
-        else if((ch>='A' && ch<='Z') || (ch>='a' && ch<='z'))
-            c++;
-        else if(ch>='0' && ch<='9')
-            d++;
-        else if(ch==' ')
-            s++;
+        scanf("%d", &arr[i]);
     }
 
-    printf("Vowels = %d\n", v);
-    printf("Consonants = %d\n", c);
-    printf("Digits = %d\n", d);
-    printf("Spaces = %d\n", s);
+    sortArray(arr, 5);
+
+    printf("Array in Ascending Order:\n");
+
+       for(i = 0; i < 5; i++)
+    {
+        printf("%d ", arr[i]);
+    }
 
     return 0;
 }
+
