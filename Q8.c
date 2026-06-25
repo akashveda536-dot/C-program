@@ -1,17 +1,20 @@
 #include<stdio.h>
-void table(int n)
+struct student
 {
-	int i;
-	for(i=1;i<=10;i++)
-	{
-		printf("%d*%d=%d\n",n,i,n*i);
-	}
+	int id;
+	float marks;
+};
+void modify(struct student s)
+{
+	s.id=102;
+	s.marks=94.5;
 }
 int main()
 {
-	int num;
-	printf("Enter a number:");
-	scanf("%d",&num);
-	table(num);
+	struct student s={101,45.5};
+	modify(s);
+	printf("%d",s.id);
+	printf("%f",s.marks);
 	return 0;
 }
+

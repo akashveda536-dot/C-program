@@ -1,21 +1,26 @@
 #include<stdio.h>
-int factorial(int n)
+struct address
 {
-	int i,fact=1;
-	for(i=1;i<=n;i++)
-	{
-		fact=fact*i;
-	}
-
-	return fact;
-}
+	int id;
+	int pincode;
+};
+struct student
+{
+	char name[20];
+	float mark;
+	struct address addr;
+};
 int main()
 {
-	int num,result;
-	printf("Enter a number:");
-	scanf("%d",&num);
-	result = factorial(num);
-	printf("factorial of %d = %d\n",num,result);
+	struct student s;
+	printf("name:%s",s.name);
+	scanf("%s",s.name);
+	printf("mark:");
+	scanf("%f",&s.mark);
+	printf("id:");
+	scanf("%d",&s.addr.id);
+	printf("pincode:");
+	scanf("%d",&s.addr.pincode);
+	printf("%s\n,%f\n,%d\n,%d\n",s.name,s.mark,s.addr.id,s.addr.pincode);
 	return 0;
 }
-

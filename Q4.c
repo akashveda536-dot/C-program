@@ -1,24 +1,24 @@
-#include <stdio.h>
-
-int isEven(int num)
+#include<stdio.h>
+struct student
 {
-    if (num % 2 == 0)
-        return 1;
-    else
-        return 0;
-}
-
+	int id;
+	float marks;
+};
 int main()
 {
-    int n;
-
-    printf("Enter a number: ");
-    scanf("%d", &n);
-
-    if (isEven(n))
-        printf("Even Number\n");
-    else
-        printf("Odd Number\n");
-
-    return 0;
+	int n;
+	printf("Enter n:");
+	scanf("%d",&n);
+	int sum=0;
+	float avg;
+	struct student s[n];
+	for(int i=0;i<n;i++)
+	{
+		printf("Enter student%d details:\n",i+1);
+		scanf(" %d,%f",&s[i].id,&s[i].marks);
+		sum+=s[i].marks;
+	}
+	avg=sum/n;
+	return 0;
 }
+

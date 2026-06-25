@@ -1,21 +1,23 @@
-#include<stdio.h>
-void inputArray(int arr[],int size)
+#include <stdio.h>
+
+struct Student
 {
-	int i;
-	printf("Enter %d elements:\n",size);
-	for(i=0;i<size;i++)
-	{
-		scanf("%d",&arr[i]);
-	}
-}
+    int id;
+    char name[20];
+    float marks;
+};
+
 int main()
 {
-	int arr[5];
-	inputArray(arr,5);
-	printf("Array elements are:\n");
-	for(int i=0;i<5;i++)
-	{
-		printf("%d",arr[i]);
-	}
-	return 0;
+    struct Student s = {101, "Akash", 85.5};
+
+    struct Student *ptr;
+
+    ptr = &s;
+
+    printf("ID    : %d\n", ptr->id);
+    printf("Name  : %s\n", ptr->name);
+    printf("Marks : %.2f\n", ptr->marks);
+
+    return 0;
 }

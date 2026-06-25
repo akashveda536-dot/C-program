@@ -1,21 +1,13 @@
-#include <stdio.h>
-
-int max(int a, int b)
+#include<stdio.h>
+struct date
 {
-    if (a > b)
-        return a;
-    else
-        return b;
-}
-
+	int day;
+	char month[20];
+	int year;
+};
 int main()
 {
-    int num1, num2;
-
-    printf("Enter two numbers: ");
-    scanf("%d %d", &num1, &num2);
-
-    printf("Maximum = %d\n", max(num1, num2));
-
-    return 0;
+	struct date s={01,"january",2012};
+	printf("%d/%s/%d",s.day,s.month,s.year);
+	return 0;
 }

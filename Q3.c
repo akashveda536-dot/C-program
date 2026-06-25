@@ -1,15 +1,23 @@
-#include <stdio.h>
+#include<stdio.h>
 
-int square(int num)
+struct employee
 {
-    return num * num;
-}
-
+	int id;
+	float salary;
+	char department[20];
+};
 int main()
 {
-    int n = 5;
+	struct employee E1= {111,40000.00,"RandD"};
+	struct employee E2= {112,30000.00,"design"};
+	struct employee E3= {113,40000.00,"NPD"};
 
-    printf("Square = %d\n", square(n));
+printf("%d %.2f %s\n",E1.id,E1.salary,E1.department);
+printf("%d %.2f %s\n",E2.id,E2.salary,E2.department);
+printf("%d %.2f %s\n",E3.id,E3.salary,E3.department);
 
-    return 0;
+return 0;
 }
+
+  
+

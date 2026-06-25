@@ -1,43 +1,41 @@
 #include <stdio.h>
 
-int reverseNumber(int n)
+struct Student
 {
-    int digit, reverse = 0;
-
-    while(n > 0)
-    {
-        digit = n % 10;
-        reverse = reverse * 10 + digit;
-        n = n / 10;
-    }
-
-    return reverse;
-}
-
-int isPalindrome(int n)
-{
-    if(n == reverseNumber(n))
-    {
-        return 1;
-    }
-
-    return 0;
-}
+    char name[20];
+    float marks;
+};
 
 int main()
 {
-    int num;
+    struct Student s[3], temp;
+    int i, j;
 
-    printf("Enter a number: ");
-    scanf("%d", &num);
-
-    if(isPalindrome(num))
+    for(i = 0; i < 3; i++)
     {
-        printf("%d is a Palindrome Number\n", num);
+        printf("\nEnter Name and Marks of Student %d: ", i + 1);
+        scanf("%s %f", s[i].name, &s[i].marks);
     }
-    else
+
+    // Sorting by marks
+    for(i = 0; i < 3 - 1; i++)
     {
-        printf("%d is Not a Palindrome Number\n", num);
+        for(j = i + 1; j < 3; j++)
+        {
+            if(s[i].marks > s[j].marks)
+            {
+                temp = s[i];
+                s[i] = s[j];
+                s[j] = temp;
+            }
+        }
+    }
+
+    printf("\nStudents Sorted by Marks:\n");
+
+    for(i = 0; i < 3; i++)
+    {
+        printf("%s\t%.2f\n", s[i].name, s[i].marks);
     }
 
     return 0;

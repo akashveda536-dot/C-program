@@ -1,33 +1,18 @@
 #include<stdio.h>
-int isprime(int n)
+struct car
 {
-	int i;
-	if(n<=1)
-	{
-		return 0;
-	}
-	for(i=2;i<n;i++)
-	{
-		if(n%i==0)
-		{
-			return 0;
-		}
-	}
-	return 1;
-}
+	char model[20];
+	int modelno;
+};
+struct engine
+{
+	int engineno;
+	struct car addr;
+};
 int main()
 {
-	int num;
-	printf("Enter a number:");
-	scanf("%d",&num);
-	if(isprime(num))
-	{
-		printf("%d is a prime number\n",num);
-	}
-	else
-	{
-		printf("%d is not a prime number\n",num);
-	}
+	struct engine c={234,"honda",1300};
+	printf("%s,%d,%d",c.addr.model,c.addr.modelno,c.engineno);
 	return 0;
 }
 

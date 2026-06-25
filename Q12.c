@@ -1,21 +1,66 @@
 #include<stdio.h>
-int reversenumber(int n)
+struct account
 {
-	int digit,reverse =0;
-	while(n>0)
-	{
-		digit =n%10;
-		reverse=reverse*10+digit;
-		n=n/10;
-	}
-	return reverse;
+        char  acc_holder_name[50];
+        int  acc_no;
+        float balance;
+};
+void display_balance(struct account*a)
+{
+        printf("\naccount_holder_name: %s\n",a->acc_holder_name);
+        printf("account_number: %d\n",a->acc_no);
+        printf("current balance: %.4f\n",a->balance);
+}
+void deposit(struct account *a)
+{
+        float deposit_amt;
+        printf("enter  the amount to be deposited: \n");
+        scanf("%f",&deposit_amt);
+        a->balance+=deposit_amt;
+        display_balance(a);
+}
+void withdrawal(struct account *a)
+{
+        float withdrawal_amt;
+        printf("enter the amount to be withdrawal: \n");
+        scanf("%f",&withdrawal_amt);
+        if(withdrawal_amt > a->balance)
+        {
+                printf("INSUFFICIENT BALANCE!!!\n");
+        }
+        else
+        {
+        printf("sufficient balance\n");
+        a->balance-=withdrawal_amt;
+        }
+        display_balance(a);
 }
 int main()
 {
-	int num,result;
-	printf("Enter a number:");
-	scanf("%d",&num);
-	result = reversenumber(num);
-	printf("Reversed number=%d\n",result);
-	return 0;
+        struct account a1= {"Akash",4787,10000};
+        int n;
+        while(1)
+        {
+                printf("\n1-balance\n2-deposit\n3-withdrwal\n4-exit\nenter user choice:\n");
+                scanf("%d",&n);
+                switch(n)
+                {
+                        case 1:
+                                display_balance(&a1);
+                                break;
+                        case 2:
+                                deposit(&a1);
+                                break;
+                        case 3:
+                                withdrawal(&a1);
+                                break;
+                        case 4:
+                                printf("exiting\n");
+                                return 0;
+                        default:
+                                printf("not defined choice.. exiting...");
+                                return 0;
+                }
+        }
+        return 0;
 }

@@ -1,28 +1,26 @@
-#include <stdio.h>
+#include<stdio.h>
 
-void swap(int *a,int *b)
+struct student
 {
-    int temp;
-
-    temp = *a;
-    *a = *b;
-    *b = temp;
-
-    printf("Inside swap function:\n");
-    printf("a = %d,b = %d\n",*a,*b);
+	int id;
+	char name[20];
+	float marks;
+};
+void studentdetails(struct student s)
+{
+	printf("ID:%d\n",s.id);
+	printf("name:%s\n",s.name);
+	printf("marks:%f\n",s.marks);
 }
-
 int main()
 {
-    int x = 10, y = 20;
-
-    printf("Before swapping:\n");
-    printf("x = %d, y = %d\n", x,y);
-
-    swap(&x,&y);
-
-    printf("After swap function call:\n");
-    printf("x = %d, y = %d\n", x,y);
-
-    return 0;
+	struct student s;
+	printf("Enter ID:");
+	scanf("%d",&s.id);
+	printf("Enter name:");
+	scanf("%s",s.name);
+	printf("Enter marks:");
+	scanf("%f",&s.marks);
+	studentdetails(s);
+	return 0;
 }
