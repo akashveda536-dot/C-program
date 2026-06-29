@@ -1,11 +1,12 @@
 #include <stdio.h>
 
-int isPalindrome(char str[])
+void reverseString(char *str)
 {
-    int start = 0;
-    int end = 0;
+    char *start = str;
+    char *end = str;
+    char temp;
 
-    while(str[end] != '\0')
+    while(*end != '\0')
     {
         end++;
     }
@@ -14,16 +15,13 @@ int isPalindrome(char str[])
 
     while(start < end)
     {
-        if(str[start] != str[end])
-        {
-            return 0;
-        }
+        temp = *start;
+        *start = *end;
+        *end = temp;
 
         start++;
         end--;
     }
-
-    return 1;
 }
 
 int main()
@@ -33,14 +31,9 @@ int main()
     printf("Enter a string: ");
     scanf("%s", str);
 
-    if(isPalindrome(str))
-    {
-        printf("Palindrome String\n");
-    }
-    else
-    {
-        printf("Not a Palindrome String\n");
-    }
+    reverseString(str);
+
+    printf("Reversed String = %s\n", str);
 
     return 0;
 }

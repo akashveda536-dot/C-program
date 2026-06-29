@@ -1,41 +1,33 @@
-#include<stdio.h>
-void countcharacter(char str[])
+#include <stdio.h>
+
+int countVowels(char *ptr)
 {
-	int i=0;
-	int vowels=0,consonants=0,digits=0,space=0;
-	while(str[i]!='\0')
-	{
-		if(str[i]=='a'||str[i]=='e'||str[i]=='i'||str[i]=='o'||str[i]=='u'||str[i]=='A'||str[i]=='E'||str[i]=='I'||str[i]=='O'||str[i]=='U')
-	        {
-			vowels++;
-		}
-		else if((str[i]=='a'&&str[i]=='z')||(str[i]=='A'&&str[i]=='Z'))
-		{
-			consonants++;
-		}
-		else if(str[i]>='0'&& str[i]<='9')
-		{
-			digits++;
-		}
-		else if(str[i]==' ')
-		{
-			space++;
-		}
-		i++;
-	}
+    int count = 0;
 
-		printf("vowels= %d\n",vowels);
-		printf("constants= %d\n",consonants);
-		printf("digits = %d\n",digits);
-		printf("space= %d\n",space);
+    while(*ptr != '\0')
+    {
+        if(*ptr == 'a' || *ptr == 'e' || *ptr == 'i' ||
+           *ptr == 'o' || *ptr == 'u' ||
+           *ptr == 'A' || *ptr == 'E' || *ptr == 'I' ||
+           *ptr == 'O' || *ptr == 'U')
+        {
+            count++;
+        }
+
+        ptr++;
+    }
+
+    return count;
 }
-	int main()
-	{
-		char str[100];
 
-		printf("Enter a string:");
-		fgets(str,sizeof(str),stdin);
-                countcharacter(str);
-		return 0;
-	}
+int main()
+{
+    char str[100];
 
+    printf("Enter a string: ");
+    scanf("%s", str);
+
+    printf("Number of vowels = %d\n", countVowels(str));
+
+    return 0;
+}

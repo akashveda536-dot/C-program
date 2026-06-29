@@ -1,18 +1,28 @@
-#include<stdio.h>
-int my_strlen(char str[])
+#include <stdio.h>
+
+void copyString(char *source, char *destination)
 {
-	int i=0;
-	while(str[i] !='\0')
-	{
-		i++;
-	}
-	return i;
+    while(*source != '\0')
+    {
+        *destination = *source;
+        source++;
+        destination++;
+    }
+
+    *destination = '\0';
 }
+
 int main()
 {
-	char str[100];
-	printf("Enter a string:");
-	scanf("%s",str);
-	printf("length of the string=%d\n",my_strlen(str));
-	return 0;
+    char str1[100], str2[100];
+
+    printf("Enter a string: ");
+    scanf("%s", str1);
+
+    copyString(str1, str2);
+
+    printf("Original String = %s\n", str1);
+    printf("Copied String   = %s\n", str2);
+
+    return 0;
 }

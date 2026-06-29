@@ -1,24 +1,30 @@
-#include<stdio.h>
-struct student
+#include <stdio.h>
+
+void swap(int *a, int *b)
 {
-	int id;
-	float marks;
-};
-int main()
-{
-	int n;
-	printf("Enter n:");
-	scanf("%d",&n);
-	int sum=0;
-	float avg;
-	struct student s[n];
-	for(int i=0;i<n;i++)
-	{
-		printf("Enter student%d details:\n",i+1);
-		scanf(" %d,%f",&s[i].id,&s[i].marks);
-		sum+=s[i].marks;
-	}
-	avg=sum/n;
-	return 0;
+    int temp;
+
+    temp = *a;
+    *a = *b;
+    *b = temp;
 }
 
+int main()
+{
+    int x, y;
+
+    printf("Enter two numbers: ");
+    scanf("%d %d", &x, &y);
+
+    printf("\nBefore Swapping:\n");
+    printf("x = %d\n", x);
+    printf("y = %d\n", y);
+
+    swap(&x, &y);
+
+    printf("\nAfter Swapping:\n");
+    printf("x = %d\n", x);
+    printf("y = %d\n", y);
+
+    return 0;
+}

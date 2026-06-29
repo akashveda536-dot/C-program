@@ -1,18 +1,23 @@
-#include<stdio.h>
-struct car
+#include <stdio.h>
+
+void divide(int a, int b, int *quotient, int *remainder)
 {
-	char model[20];
-	int modelno;
-};
-struct engine
-{
-	int engineno;
-	struct car addr;
-};
-int main()
-{
-	struct engine c={234,"honda",1300};
-	printf("%s,%d,%d",c.addr.model,c.addr.modelno,c.engineno);
-	return 0;
+    *quotient = a / b;
+    *remainder = a % b;
 }
 
+int main()
+{
+    int num1, num2;
+    int quotient, remainder;
+
+    printf("Enter dividend and divisor: ");
+    scanf("%d %d", &num1, &num2);
+
+    divide(num1, num2, &quotient, &remainder);
+
+    printf("Quotient = %d\n", quotient);
+    printf("Remainder = %d\n", remainder);
+
+    return 0;
+}
