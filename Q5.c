@@ -1,13 +1,21 @@
-#include<stdio.h>
-struct date
+#include <stdio.h>
+
+void modify(int *ptr)
 {
-	int day;
-	char month[20];
-	int year;
-};
+    *ptr = 50;
+}
+
 int main()
 {
-	struct date s={01,"january",2012};
-	printf("%d/%s/%d",s.day,s.month,s.year);
-	return 0;
+    int x = 10;
+
+    printf("Before Function Call:\n");
+    printf("x = %d\n", x);
+
+    modify(&x);
+
+    printf("\nAfter Function Call:\n");
+    printf("x = %d\n", x);
+
+    return 0;
 }

@@ -1,36 +1,23 @@
 #include <stdio.h>
 
-int findSum(int arr[], int size)
-{
-    int i, sum = 0;
-
-    for(i = 0; i < size; i++)
-    {
-        sum = sum + arr[i];
-    }
-
-    return sum;
-}
-
 int main()
 {
-    int arr[5];
-    int i, sum;
-    float average;
+    int arr[] = {10, 20, 30};
+    int *p;
 
-    printf("Enter 5 elements:\n");
+    p = arr;
 
-    for(i = 0; i < 5; i++)
-    {
-        scanf("%d", &arr[i]);
-    }
+    printf("Initial Value = %d\n", *p);
 
-    sum = findSum(arr, 5);
+    p++;
+    printf("After p++ = %d\n", *p);
 
-    average = (float)sum / 5;
+    p = arr;
 
-    printf("Sum = %d\n", sum);
-    printf("Average = %.2f\n", average);
+    (*p)++;
+    printf("After (*p)++ = %d\n", *p);
+
+    printf("First element of array = %d\n", arr[0]);
 
     return 0;
 }

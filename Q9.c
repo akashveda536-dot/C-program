@@ -1,26 +1,23 @@
-#include<stdio.h>
-struct address
+#include <stdio.h>
+
+void calculate(int a, int b, int *sum, int *diff)
 {
-	int id;
-	int pincode;
-};
-struct student
-{
-	char name[20];
-	float mark;
-	struct address addr;
-};
+    *sum = a + b;
+    *diff = a - b;
+}
+
 int main()
 {
-	struct student s;
-	printf("name:%s",s.name);
-	scanf("%s",s.name);
-	printf("mark:");
-	scanf("%f",&s.mark);
-	printf("id:");
-	scanf("%d",&s.addr.id);
-	printf("pincode:");
-	scanf("%d",&s.addr.pincode);
-	printf("%s\n,%f\n,%d\n,%d\n",s.name,s.mark,s.addr.id,s.addr.pincode);
-	return 0;
+    int num1, num2;
+    int sum, diff;
+
+    printf("Enter two numbers: ");
+    scanf("%d %d", &num1, &num2);
+
+    calculate(num1, num2, &sum, &diff);
+
+    printf("Sum = %d\n", sum);
+    printf("Difference = %d\n", diff);
+
+    return 0;
 }

@@ -1,23 +1,19 @@
 #include <stdio.h>
 
-struct Student
-{
-    int id;
-    char name[20];
-    float marks;
-};
-
 int main()
 {
-    struct Student s = {101, "Akash", 85.5};
+    int arr[] = {10, 20, 30, 40, 50};
+    int *ptr;
+    int i;
 
-    struct Student *ptr;
+    ptr = arr;
 
-    ptr = &s;
+    printf("Array Elements:\n");
 
-    printf("ID    : %d\n", ptr->id);
-    printf("Name  : %s\n", ptr->name);
-    printf("Marks : %.2f\n", ptr->marks);
+    for(i = 0; i < 5; i++)
+    {
+        printf("%d ", *(ptr + i));
+    }
 
     return 0;
 }

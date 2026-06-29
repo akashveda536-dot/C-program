@@ -1,44 +1,27 @@
 #include <stdio.h>
 
-void sortArray(int arr[], int size)
-{
-    int i, j, temp;
-
-    for(i = 0; i < size - 1; i++)
-    {
-        for(j = i + 1; j < size; j++)
-        {
-            if(arr[i] > arr[j])
-            {
-                temp = arr[i];
-                arr[i] = arr[j];
-                arr[j] = temp;
-            }
-        }
-    }
-}
-
 int main()
 {
-    int arr[5];
-    int i;
+    int matrix[2][3] = {
+        {1, 2, 3},
+        {4, 5, 6}
+    };
 
-    printf("Enter 5 elements:\n");
+    int (*ptr)[3];
+    int i, j;
 
-    for(i = 0; i < 5; i++)
+    ptr = matrix;
+
+    printf("Matrix Elements:\n");
+
+    for(i = 0; i < 2; i++)
     {
-        scanf("%d", &arr[i]);
-    }
-
-    sortArray(arr, 5);
-
-    printf("Array in Ascending Order:\n");
-
-       for(i = 0; i < 5; i++)
-    {
-        printf("%d ", arr[i]);
+        for(j = 0; j < 3; j++)
+        {
+            printf("%d ", *(*(ptr + i) + j));
+        }
+        printf("\n");
     }
 
     return 0;
 }
-

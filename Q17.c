@@ -1,28 +1,30 @@
-#include<stdio.h>
-int findmax(int arr[],int size)
-{
-	int i,max;
-	max=arr[0];
-	for(i=1;i<size;i++)
-	{
-		if(arr[i]>max)
-		{
-			max=arr[i];
-		}
-	}
-	return max;
-}
+#include <stdio.h>
+
 int main()
 {
-	int arr[5];
-	int i,max;
-	printf("Enter 5 elements:\n");
-	for(i=0;i<5;i++)
-	{
-		scanf("%d",&arr[i]);
-	}
-	max=findmax(arr,5);
-	printf("maximum element =%d\n",max);
-	return 0;
-}
+    int arr[] = {10, 20, 30, 40, 50};
+    int *p;
+    int i;
 
+    p = arr;
+
+    printf("Using *(p+i):\n");
+    for(i = 0; i < 5; i++)
+    {
+        printf("%d ", *(p + i));
+    }
+
+    printf("\n\nUsing p[i]:\n");
+    for(i = 0; i < 5; i++)
+    {
+        printf("%d ", p[i]);
+    }
+
+    printf("\n\nUsing *(i+p):\n");
+    for(i = 0; i < 5; i++)
+    {
+        printf("%d ", *(i + p));
+    }
+
+    return 0;
+}

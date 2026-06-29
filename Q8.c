@@ -1,20 +1,18 @@
-#include<stdio.h>
-struct student
-{
-	int id;
-	float marks;
-};
-void modify(struct student s)
-{
-	s.id=102;
-	s.marks=94.5;
-}
+#include <stdio.h>
+
 int main()
 {
-	struct student s={101,45.5};
-	modify(s);
-	printf("%d",s.id);
-	printf("%f",s.marks);
-	return 0;
-}
+    int *ptr = NULL;
 
+    if(ptr == NULL)
+    {
+        printf("Pointer is NULL\n");
+        printf("Cannot access any value.\n");
+    }
+    else
+    {
+        printf("Value = %d\n", *ptr);
+    }
+
+    return 0;
+}

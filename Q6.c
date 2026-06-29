@@ -1,24 +1,17 @@
-#include<stdio.h>
-struct time
-{
-	int hours;
-	int minutes;
-	int seconds;
-};
+#include <stdio.h>
+
 int main()
 {
-	struct time t;
-	int totalseconds;
+    int a = 10;
+    int *ptr;
+    int **pptr;
 
-	printf("Enter the hours:");
-	scanf("%d",&t.hours);
-	printf("Enter the minutes:");
-	scanf("%d",&t.minutes);
-	printf("Enter the seconds:");
-	scanf("%d",&t.seconds);
-	totalseconds = (t.hours*3600)+(t.minutes*60)+(t.seconds);
-	printf("%d\n",totalseconds);
-	return 0;
+    ptr = &a;
+    pptr = &ptr;
+
+    printf("Value of a        = %d\n", a);
+    printf("Value using ptr   = %d\n", *ptr);
+    printf("Value using pptr  = %d\n", **pptr);
+
+    return 0;
 }
-
-
