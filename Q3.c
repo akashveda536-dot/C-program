@@ -2,14 +2,13 @@
 
 int main()
 {
-    int x = 10;
-    int *p;
+    register int a = 10, b = 20, temp;
 
-    p = &x;
+    temp = a;
+    a = b;
+    b = temp;
 
-    printf("x  = %d\n", x);
-    printf("&x = %p\n", (void *)&x);
-    printf("*p = %d\n", *p);
+    printf("a = %d\nb = %d", a, b);
 
     return 0;
 }

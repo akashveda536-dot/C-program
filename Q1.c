@@ -1,14 +1,18 @@
 #include <stdio.h>
 
+void trackMe()
+{
+    static int count = 0;
+    count++;
+
+    printf("I have been called %d times\n", count);
+}
+
 int main()
 {
-    int a = 10;
-    int *ptr;
-
-    ptr = &a;
-
-    printf("Value of a = %d\n", a);
-    printf("Address of a = %p\n", (void *)ptr);
+    trackMe();
+    trackMe();
+    trackMe();
 
     return 0;
 }

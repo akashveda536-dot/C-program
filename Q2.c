@@ -1,16 +1,23 @@
 #include <stdio.h>
 
+static int count = 0;    // Shared by functions in this file
+
+void add()
+{
+    count++;
+}
+
+void display()
+{
+    printf("%d", count);
+}
+
 int main()
 {
-    int a;
-    int *ptr;
+    add();
+    add();
 
-    ptr = &a;
-
-    *ptr = 25;
-
-    printf("Value of a = %d\n", a);
-    printf("Value using pointer = %d\n", *ptr);
+    display();
 
     return 0;
 }
