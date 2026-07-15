@@ -1,18 +1,33 @@
-#include <stdio.h>
-
-void trackMe()
+#include<stdio.h>
+typedef struct
 {
-    static int count = 0;
-    count++;
-
-    printf("I have been called %d times\n", count);
+	char name[20];
+	int rollno;
+	int mark;
+}student;
+void printresult(student s)
+{
+if(s.mark>40)
+{
+	printf("PASS");
 }
-
+else
+{
+	printf("FAIL");
+}
+}
 int main()
 {
-    trackMe();
-    trackMe();
-    trackMe();
-
-    return 0;
+	student s;
+	printf("Enter the student details\n");
+	printf("Enter the name:");
+	scanf("%s",s.name);
+	printf("Enter the rollno:");
+	scanf("%d",&s.rollno);
+	printf("Enter the mark:");
+	scanf("%d",&s.mark);
+	printresult(s);
+	return 0;
 }
+
+

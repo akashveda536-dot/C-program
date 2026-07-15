@@ -1,23 +1,31 @@
-#include <stdio.h>
-
-static int count = 0;    // Shared by functions in this file
-
-void add()
+#include<stdio.h>
+typedef enum
 {
-    count++;
-}
-
-void display()
+	SUNDAY=0,
+	MONDAY=1,
+	TUESDAY=2,
+	WEDNESDAY=3,
+	THURSDAY=4,
+	FRIDAY=5,
+	SATURDAY=6,
+} Day;
+void checkdaytype(Day d)
 {
-    printf("%d", count);
+	if(d==0)
+	{
+		printf("weekend");
+	}
+	else
+	{
+		printf("weekday");
+	}
 }
-
 int main()
 {
-    add();
-    add();
-
-    display();
-
-    return 0;
+	int d;
+	printf("Enter the number:");
+	scanf("%d",&d);
+	checkdaytype(d);
+	return 0;
 }
+
