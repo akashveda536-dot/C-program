@@ -2,16 +2,19 @@
 
 int main()
 {
-    int a = 10;
-    int *ptr;
-    int **pptr;
+    int num, reverse = 0, rem;
 
-    ptr = &a;
-    pptr = &ptr;
+    printf("Enter a number: ");
+    scanf("%d", &num);
 
-    printf("Value of a        = %d\n", a);
-    printf("Value using ptr   = %d\n", *ptr);
-    printf("Value using pptr  = %d\n", **pptr);
+    while (num != 0)
+    {
+        rem = num % 10;
+        reverse = reverse * 10 + rem;
+        num = num / 10;
+    }
+
+    printf("Reversed number = %d", reverse);
 
     return 0;
 }

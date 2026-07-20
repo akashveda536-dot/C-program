@@ -1,23 +1,16 @@
 #include <stdio.h>
 
-void calculate(int a, int b, int *sum, int *diff)
-{
-    *sum = a + b;
-    *diff = a - b;
-}
-
 int main()
 {
-    int num1, num2;
-    int sum, diff;
+    int num = 56789;
+    int count = 0;
 
-    printf("Enter two numbers: ");
-    scanf("%d %d", &num1, &num2);
+    for(; num != 0; num = num / 10)
+    {
+        count++;
+    }
 
-    calculate(num1, num2, &sum, &diff);
-
-    printf("Sum = %d\n", sum);
-    printf("Difference = %d\n", diff);
+    printf("Number of digits = %d", count);
 
     return 0;
 }

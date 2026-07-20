@@ -1,31 +1,25 @@
 #include <stdio.h>
 
-void reverseNumber(int *num)
-{
-    int rev = 0;
-    int temp = *num;
-
-    while(temp != 0)
-    {
-        rev = rev * 10 + temp % 10;
-        temp = temp / 10;
-    }
-
-    *num = rev;
-}
-
 int main()
 {
-    int number;
+    int arr[5] = {10, 20, 30, 40, 50};
+    int key = 30;
+    int found = 0;
 
-    printf("Enter a number: ");
-    scanf("%d", &number);
+    for(int i = 0; i < 5; i++)
+    {
+        if(arr[i] == key)
+        {
+            printf("Element found at index %d", i);
+            found = 1;
+            break;
+        }
+    }
 
-    printf("Before Reverse = %d\n", number);
-
-    reverseNumber(&number);
-
-    printf("After Reverse = %d\n", number);
+    if(found == 0)
+    {
+        printf("Element not found");
+    }
 
     return 0;
 }

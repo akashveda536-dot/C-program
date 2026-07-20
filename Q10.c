@@ -1,23 +1,31 @@
 #include <stdio.h>
 
-void divide(int a, int b, int *quotient, int *remainder)
-{
-    *quotient = a / b;
-    *remainder = a % b;
-}
-
 int main()
 {
-    int num1, num2;
-    int quotient, remainder;
+    int a = 10, b = 5;
+    char op = '+';
 
-    printf("Enter dividend and divisor: ");
-    scanf("%d %d", &num1, &num2);
+    switch(op)
+    {
+        case '+':
+            printf("Result = %d", a + b);
+            break;
 
-    divide(num1, num2, &quotient, &remainder);
+        case '-':
+            printf("Result = %d", a - b);
+            break;
 
-    printf("Quotient = %d\n", quotient);
-    printf("Remainder = %d\n", remainder);
+        case '*':
+            printf("Result = %d", a * b);
+            break;
+
+        case '/':
+            printf("Result = %d", a / b);
+            break;
+
+        default:
+            printf("Invalid Operator");
+    }
 
     return 0;
 }

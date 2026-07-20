@@ -1,21 +1,18 @@
 #include <stdio.h>
 
-void modify(int *ptr)
-{
-    *ptr = 50;
-}
-
 int main()
 {
-    int x = 10;
+    int N, sum = 0;
 
-    printf("Before Function Call:\n");
-    printf("x = %d\n", x);
+    printf("Enter the value of N: ");
+    scanf("%d", &N);
 
-    modify(&x);
+    for(int i = 1; i <= N; i++)
+    {
+        sum = sum + i;
+    }
 
-    printf("\nAfter Function Call:\n");
-    printf("x = %d\n", x);
+    printf("Sum = %d", sum);
 
     return 0;
 }

@@ -2,18 +2,23 @@
 
 int main()
 {
-    int arr[] = {10, 20, 30, 40, 50};
-    int *ptr;
-    int i;
+    int arr[6] = {10, 15, 20, 25, 30, 35};
+    int even = 0, odd = 0;
 
-    ptr = arr;
-
-    printf("Array Elements:\n");
-
-    for(i = 0; i < 5; i++)
+    for(int i = 0; i < 6; i++)
     {
-        printf("%d ", *(ptr + i));
+        if(arr[i] % 2 == 0)
+        {
+            even++;
+        }
+        else
+        {
+            odd++;
+        }
     }
+
+    printf("Even numbers = %d\n", even);
+    printf("Odd numbers = %d\n", odd);
 
     return 0;
 }

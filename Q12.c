@@ -1,32 +1,20 @@
 #include <stdio.h>
 
-int findMax(int *ptr, int size)
-{
-    int i;
-    int max = *ptr;
-
-    for(i = 1; i < size; i++)
-    {
-        if(*(ptr + i) > max)
-        {
-            max = *(ptr + i);
-        }
-    }
-
-    return max;
-}
-
 int main()
 {
-    int arr[] = {25, 10, 45, 30, 15};
-    int size;
-    int max;
+    int arr[5] = {10, 20, 30, 40, 50};
+    int sum = 0;
+    float average;
 
-    size = sizeof(arr) / sizeof(arr[0]);
+    for(int i = 0; i < 5; i++)
+    {
+        sum = sum + arr[i];
+    }
 
-    max = findMax(arr, size);
+    average = (float)sum / 5;
 
-    printf("Maximum Element = %d\n", max);
+    printf("Sum = %d\n", sum);
+    printf("Average = %.2f\n", average);
 
     return 0;
 }

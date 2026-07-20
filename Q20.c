@@ -2,26 +2,28 @@
 
 int main()
 {
-    int matrix[2][3] = {
-        {1, 2, 3},
-        {4, 5, 6}
-    };
+    char str[] = "Hello 123 World";
+    int v = 0, c = 0, d = 0, s = 0;
 
-    int (*ptr)[3];
-    int i, j;
-
-    ptr = matrix;
-
-    printf("Matrix Elements:\n");
-
-    for(i = 0; i < 2; i++)
+    for(int i = 0; str[i] != '\0'; i++)
     {
-        for(j = 0; j < 3; j++)
-        {
-            printf("%d ", *(*(ptr + i) + j));
-        }
-        printf("\n");
+        char ch = str[i];
+
+        if(ch=='a'||ch=='e'||ch=='i'||ch=='o'||ch=='u'||
+           ch=='A'||ch=='E'||ch=='I'||ch=='O'||ch=='U')
+            v++;
+        else if((ch>='A' && ch<='Z') || (ch>='a' && ch<='z'))
+            c++;
+        else if(ch>='0' && ch<='9')
+            d++;
+        else if(ch==' ')
+            s++;
     }
+
+    printf("Vowels = %d\n", v);
+    printf("Consonants = %d\n", c);
+    printf("Digits = %d\n", d);
+    printf("Spaces = %d\n", s);
 
     return 0;
 }

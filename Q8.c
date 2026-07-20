@@ -2,16 +2,11 @@
 
 int main()
 {
-    int *ptr = NULL;
+    int num = 5;
 
-    if(ptr == NULL)
+    for(int i = 1; i <= 10; i++)
     {
-        printf("Pointer is NULL\n");
-        printf("Cannot access any value.\n");
-    }
-    else
-    {
-        printf("Value = %d\n", *ptr);
+        printf("%d x %d = %d\n", num, i, num * i);
     }
 
     return 0;

@@ -1,23 +1,14 @@
 #include <stdio.h>
 
+int len(char s[])
+{
+    int i;
+    for(i = 0; s[i] != '\0'; i++);
+    return i;
+}
+
 int main()
 {
-    int arr[] = {10, 20, 30};
-    int *p;
-
-    p = arr;
-
-    printf("Initial Value = %d\n", *p);
-
-    p++;
-    printf("After p++ = %d\n", *p);
-
-    p = arr;
-
-    (*p)++;
-    printf("After (*p)++ = %d\n", *p);
-
-    printf("First element of array = %d\n", arr[0]);
-
-    return 0;
+    char s[] = "Hello";
+    printf("%d", len(s));
 }

@@ -2,24 +2,14 @@
 
 int main()
 {
-    int arr[2][3] = {
-        {10, 20, 30},
-        {40, 50, 60}
-    };
+    char s[] = "madam";
+    int i, l = 0, f = 1;
 
-    int (*p)[3];
-    int i, j;
+    while(s[l]) l++;
 
-    p = arr;
+    for(i = 0; i < l/2; i++)
+        if(s[i] != s[l-1-i])
+            f = 0;
 
-    for(i = 0; i < 2; i++)
-    {
-        for(j = 0; j < 3; j++)
-        {
-            printf("%d ", *(*(p + i) + j));
-        }
-        printf("\n");
-    }
-
-    return 0;
+    printf(f ? "Palindrome" : "Not Palindrome");
 }

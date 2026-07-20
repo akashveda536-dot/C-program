@@ -2,29 +2,23 @@
 
 int main()
 {
-    int arr[] = {10, 20, 30, 40, 50};
-    int *p;
-    int i;
+    int a[] = {10, 50, 30, 80, 60};
+    int largest = a[0], second = a[0];
 
-    p = arr;
-
-    printf("Using *(p+i):\n");
-    for(i = 0; i < 5; i++)
+    for(int i = 1; i < 5; i++)
     {
-        printf("%d ", *(p + i));
+        if(a[i] > largest)
+        {
+            second = largest;
+            largest = a[i];
+        }
+        else if(a[i] > second)
+        {
+            second = a[i];
+        }
     }
 
-    printf("\n\nUsing p[i]:\n");
-    for(i = 0; i < 5; i++)
-    {
-        printf("%d ", p[i]);
-    }
-
-    printf("\n\nUsing *(i+p):\n");
-    for(i = 0; i < 5; i++)
-    {
-        printf("%d ", *(i + p));
-    }
+    printf("Second Largest = %d", second);
 
     return 0;
 }

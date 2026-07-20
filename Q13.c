@@ -1,19 +1,15 @@
 #include <stdio.h>
 
-void increment(int *ptr)
-{
-    (*ptr)++;
-}
-
 int main()
 {
-    int num = 10;
+    int arr[4] = {1, 2, 3, 4};
 
-    printf("Before Increment = %d\n", num);
+    printf("Reversed array: ");
 
-    increment(&num);
-
-    printf("After Increment = %d\n", num);
+    for(int i = 3; i >= 0; i--)
+    {
+        printf("%d ", arr[i]);
+    }
 
     return 0;
 }

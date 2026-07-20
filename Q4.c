@@ -1,13 +1,16 @@
 #include <stdio.h>
 
-static int s = 10;   // Static variable
-
 int main()
 {
-    int a = 20;       // Stack variable
+    int N;
 
-    printf("Address of static variable : %p\n", (void *)&s);
-    printf("Address of stack variable  : %p\n", (void *)&a);
+    printf("Enter the value of N: ");
+    scanf("%d", &N);
+
+    for(int i = 1; i <= N; i++)
+    {
+        printf("%d\n", i);
+    }
 
     return 0;
 }
