@@ -1,39 +1,31 @@
 #include<stdio.h>
-int findpeaks(int a[],int n,int peakindex[])
+int evenodd(int n)
 {
-	int count=0,i;
-	for(i=1;i<n;i++)
+	if(n%2==0)
 	{
-		if((a[i-1]<a[i])&&(a[i+1]<a[i]))
-		{
-			peakindex[count]=i;
-			count++;
-		}
+		return 1;
 	}
-	return count;
+	else
+	{
+		return 0;
+	}
+}
 int main()
 {
-	int n,a[20],peakindex[20],count;
-	printf("Enter the N value:");
+	int n,eonum;
+	printf("Enter the N:");
 	scanf("%d",&n);
-	printf("Enter the arr values:");
-	for(i=0;i<n;i++)
+	eonum=evenodd(n);
+	if(eonum==1)
 	{
-		scanf("%d",&a[i]);
+		printf("Entered number is even");
 	}
-	count=findpeaks(a,n,peakindex);
-	for(i=0;i<count;i++)
+	else
 	{
-		printf("peak at index %d:%d\n",peakindex[i],a[peakindex[i]]);
+		printf("Entered number is odd");
 	}
-	 printf("Total peaks:%d",count);
-	 return 0;
+	return 0;
 }
 
-	
-	
-	
 
-		
-
-
+	
