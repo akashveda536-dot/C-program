@@ -1,27 +1,59 @@
 #include<stdio.h>
-int largest(int a,int b,int c)
-{
-	if(a>b&&a>c)
-		return 2;
-	else if(b>c&&b>a)
-		return 1;
-	else if(c>a&&c>b)
-		return 0;
-}
 int main()
 {
-	int a,b,c,large;
-	printf("Enter the number for A,B,C:");
-	scanf("%d%d%d",&a,&b,&c);
-	large=largest(a,b,c);
-	if(large==2)
-		printf("A is greater:%d",a);
-	else if(large==1)
-		printf("B is greater:%d",b);
-	else if(large==0)
-		printf("C is greater:%d",c);
-	return 0;
+    int c,z,e,f;
+    printf("Enter the row for matrix1:");
+    scanf("%d",&c);
+    printf("Enter the column for matrix1:");
+    scanf("%d",&z);
+    int a[c][z];
+    printf("Enter the matrix1:\n");
+    for(int i=0;i<c;i++)
+    {
+        for(int j=0;j<z;j++)
+        {
+            scanf("%d",&a[i][j]);
+        }
+    }
+    printf("Enter the row for matrix2:");
+    scanf("%d",&e);
+    printf("Enter the column for matrix2:");
+    scanf("%d",&f);
+    int b[e][f];
+    printf("Enter the matrix2:\n");
+    for(int k=0;k<e;k++)
+    {
+        for(int l=0;l<f;l++)
+        {
+            scanf("%d",&b[k][l]);
+        }
+    }
+    printf("MATRIX 1\n");
+    for(int i=0;i<c;i++)
+    {
+        for(int j=0;j<z;j++)
+        {
+            printf("%d\t",a[i][j]);
+        }
+        printf("\n");
+    }
+    printf("MATRIX 2\n");
+    for(int k=0;k<e;k++)
+    {
+        for(int l=0;l<f;l++)
+        {
+            printf("%d\t",b[k][l]);
+        }
+        printf("\n");
+    }
+    printf("ADDITIONED MATRIX\n");
+    for(int u=0;u<c;u++)
+    {
+        for(int v=0;v<z;v++)
+        {
+            printf("%d\t",a[u][v]-b[u][v]);
+        }
+        printf("\n");
+    }
+    return 0;
 }
-
-	
-
